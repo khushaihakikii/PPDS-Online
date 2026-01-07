@@ -24,13 +24,13 @@ class RegistrationController extends Controller
             $search = $request->search;
             $query->where(function ($q) use ($search) {
                 $q->where('full_name', 'like', "%{$search}%")
-                  ->orWhere('email', 'like', "%{$search}%")
-                  ->orWhere('student_name', 'like', "%{$search}%")
-                  ->orWhere('institution', 'like', "%{$search}%")
-                  ->orWhereHas('user', function ($userQuery) use ($search) {
-                      $userQuery->where('name', 'like', "%{$search}%")
-                               ->orWhere('email', 'like', "%{$search}%");
-                  });
+                    ->orWhere('email', 'like', "%{$search}%")
+                    ->orWhere('student_name', 'like', "%{$search}%")
+                    ->orWhere('institution', 'like', "%{$search}%")
+                    ->orWhereHas('user', function ($userQuery) use ($search) {
+                        $userQuery->where('name', 'like', "%{$search}%")
+                            ->orWhere('email', 'like', "%{$search}%");
+                    });
             });
         }
 
