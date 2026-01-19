@@ -73,17 +73,6 @@
                 Platform satu pintu untuk pendaftaran sekolah yang lebih cepat, transparan, dan terpercaya bagi seluruh orang tua dan calon siswa.
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start pt-4 px-4 sm:px-0">
-                <a href="{{ route('register') }}"
-                    class="group inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all bg-blue-600 rounded-2xl hover:bg-blue-700 hover:shadow-xl hover:-translate-y-1">
-                    Daftar Akun Baru
-                </a>
-                <a href="#alur"
-                    class="inline-flex items-center justify-center px-8 py-4 font-bold text-slate-600 transition-all border-2 border-slate-200 rounded-2xl hover:bg-slate-50 hover:border-slate-300">
-                    Lihat Panduan
-                </a>
-            </div>
-
             <div class="pt-8 grid grid-cols-2 md:grid-cols-3 gap-6 border-t border-slate-100 max-w-md mx-auto lg:mx-0">
                 <div class="text-center lg:text-left">
                     <div class="text-xl md:text-2xl font-bold text-slate-900 uppercase">10k+</div>
@@ -134,7 +123,7 @@
         </div>
     </main>
 
-    <footer class="w-full bg-white border-t border-slate-100 px-5 py-8 md:py-12 mt-auto">
+    <footer class="w-full bg-white border-t border-slate-100 px-5 py-8 md:py-12 mt-20">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
             <div class="text-sm font-medium text-slate-400 order-2 md:order-1">
                 &copy; {{ date('Y') }} <span class="text-slate-900 font-bold">PPDS Online</span>. 
