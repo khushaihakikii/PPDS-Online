@@ -1,11 +1,20 @@
 @props(['active' => false, 'href'])
 
 @php
-$classes = $active
-    ? 'inline-flex items-center text-blue-600 bg-blue-50 shadow-sm shadow-blue-100/50 rounded-xl px-4 py-2 transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg'
-    : 'inline-flex items-center text-slate-500 hover:bg-white/5 hover:backdrop-blur-sm rounded-xl px-4 py-2 transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg';
+$baseClasses = 'relative inline-flex items-center group px-1 py-2 text-sm font-medium transition-all duration-300';
+
+$activeClasses = $active 
+    ? 'text-blue-600' 
+    : 'text-slate-500 hover:text-blue-600';
 @endphp
 
-<a href="{{ $href }}" {{ $attributes->merge(['class' => $classes]) }}>
+<a href="{{ $href }}" {{ $attributes->merge(['class' => "$baseClasses $activeClasses"]) }}>
     {{ $slot }}
+    
+    {{-- Garis Animasi --}}
+    <span @class([
+    'absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-blue-600 transition-all duration-300 ease-out',
+    'w-full' => $active,
+    'w-0 group-hover:w-full' => !$active
+])></span>
 </a>
